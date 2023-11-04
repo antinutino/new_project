@@ -25,9 +25,10 @@ int main(int argc,char* argv[])
         return 1;
 
     }
-    int circleX=51;
+    int circleX=0;
     int circleY=300;
 int radius=50;
+int rad;
 bool quit=false;
 while(quit!=true)
 {
@@ -42,20 +43,24 @@ while(quit!=true)
     }   SDL_SetRenderDrawColor(renderer,0,0,0,255);
         SDL_RenderClear(renderer);
     SDL_SetRenderDrawColor(renderer,255,0,0,255);
-    while(radius--)
+    rad=radius;
+    while(rad--)
     for(int angle=0;angle<360;angle++)
     {
-        int x=circleX+radius*cos(angle*M_PI/180);
-         int y=circleY+radius*sin(angle*M_PI/180);
+        int x=circleX+rad*cos(angle*M_PI/180);
+         int y=circleY+rad*sin(angle*M_PI/180);
          SDL_RenderDrawPoint(renderer,x,y);}
         SDL_RenderPresent(renderer);
     SDL_Delay(10);
+    SDL_SetRenderDrawColor(renderer,0,0,0,255);
+        SDL_RenderClear(renderer);
+    SDL_SetRenderDrawColor(renderer,255,0,0,255);
     circleX+=3;
- if(circleX>750)
+ if(circleX>850)
     circleX=0;
-    radius=50;
 
 }
+
  SDL_DestroyRenderer(renderer);
  SDL_DestroyWindow(window);
  SDL_Quit();

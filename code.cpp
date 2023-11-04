@@ -42,6 +42,7 @@ while(quit!=true)
     }   SDL_SetRenderDrawColor(renderer,0,0,0,255);
         SDL_RenderClear(renderer);
     SDL_SetRenderDrawColor(renderer,255,0,0,255);
+    while(radius--)
     for(int angle=0;angle<360;angle++)
     {
         int x=circleX+radius*cos(angle*M_PI/180);
@@ -52,6 +53,7 @@ while(quit!=true)
     circleX+=3;
  if(circleX>750)
     circleX=0;
+    radius=50;
 
 }
  SDL_DestroyRenderer(renderer);

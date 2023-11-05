@@ -75,7 +75,7 @@ while(quit!=true)
    int p=(a-c)*(a-c);
    int q=(b-d)*(b-d);
    if(p+q<=100*100)
-   {
+   { cout<<"GAME IS OVER"<<endl;
      SDL_SetRenderDrawColor(renderer,100,0,200,255);
     SDL_RenderClear(renderer);
      SDL_RenderPresent(renderer); 
